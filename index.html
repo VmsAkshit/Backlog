@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE Backlog & Timetable Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>JEE Backlog Manager</h1>
+            <p>Generate daily, weekly, and monthly trackers powered by AI</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <h2>Plan Details</h2>
+                <form id="backlog-form">
+                    <div class="form-group">
+                        <label for="api-key">Gemini API Key (Required):</label>
+                        <input type="password" id="api-key" placeholder="Enter your API key" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subjects">Subjects (e.g., Physics, Chemistry, Maths):</label>
+                        <input type="text" id="subjects" placeholder="E.g., Physics (Rotational Motion)" required>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="chapters">Number of Chapters:</label>
+                            <input type="number" id="chapters" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="videos">Videos per Chapter:</label>
+                            <input type="number" id="videos" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="duration">Avg. Video Duration (mins):</label>
+                            <input type="number" id="duration" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="study-time">Dedicated Study Time (hrs/day):</label>
+                            <input type="number" id="study-time" min="1" max="24" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="generate-btn">Generate My Timetable</button>
+                </form>
+            </section>
+
+            <section class="output-section">
+                <h2>Your Action Plan</h2>
+                <div id="loading" class="hidden">Consulting Gemini API... Please wait.</div>
+                <div id="result-container">
+                    <!-- AI generated content will appear here -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
